@@ -1,0 +1,52 @@
+{
+  "name": "@meshgateway/x402-client",
+  "version": "0.1.0",
+  "description": "x402 payment client for the MeshGateway facilitator. Wrap fetch, sign the payment, get the resource.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meshgateway/x402-client.git"
+  },
+  "homepage": "https://docs.meshgateway.co",
+  "keywords": [
+    "x402",
+    "payments",
+    "micropayments",
+    "usdc",
+    "usdg",
+    "permit2",
+    "eip3009",
+    "meshgateway"
+  ],
+  "peerDependencies": {
+    "viem": "^2.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "viem": "^2.21.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
